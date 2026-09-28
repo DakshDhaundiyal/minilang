@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-tertiary: #1a1a26;
+  --bg-elevated: #1e1e2e;
+  --border: #2a2a3a;
+  --border-subtle: #1f1f2f;
+  --text-primary: #e4e4ef;
+  --text-secondary: #9494a8;
+  --text-muted: #6b6b80;
+  --accent-start: #6366f1;
+  --accent-end: #06b6d4;
+  --accent: #818cf8;
+  --accent-dim: rgba(99, 102, 241, 0.15);
+  --success: #34d399;
+  --error: #f87171;
+  --warning: #fbbf24;
+  --skipped: #6b7280;
+
+  /* Token colors */
+  --token-keyword: #c084fc;
+  --token-identifier: #93c5fd;
+  --token-integer: #fbbf24;
+  --token-float: #f59e0b;
+  --token-string: #34d399;
+  --token-operator: #f87171;
+  --token-delimiter: #9ca3af;
+  --token-comment: #6b7280;
+  --token-error: #ef4444;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* CodeMirror overrides */
+.cm-editor {
+  height: 100%;
+  background: transparent !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 13px;
+}
+
+.cm-editor .cm-content {
+  font-family: 'JetBrains Mono', monospace !important;
+  padding: 12px 0;
+}
+
+.cm-editor .cm-gutters {
+  background: transparent !important;
+  border-right: 1px solid var(--border-subtle) !important;
+  color: var(--text-muted) !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 12px;
+  min-width: 40px;
+}
+
+.cm-editor .cm-activeLineGutter {
+  background: var(--accent-dim) !important;
+  color: var(--accent) !important;
+}
+
+.cm-editor .cm-activeLine {
+  background: rgba(99, 102, 241, 0.06) !important;
+}
+
+.cm-editor .cm-selectionBackground {
+  background: rgba(99, 102, 241, 0.2) !important;
+}
+
+.cm-editor .cm-cursor {
+  border-left-color: var(--accent) !important;
+}
+
+.cm-editor .cm-matchingBracket {
+  background: rgba(99, 102, 241, 0.3) !important;
+  color: var(--accent) !important;
+}
+
+/* Error line decoration */
+.cm-error-line {
+  background: rgba(248, 113, 113, 0.08) !important;
+  border-left: 2px solid var(--error) !important;
+}
+
+/* Syntax highlighting */
+.cm-minilang-keyword {
+  color: var(--token-keyword) !important;
+  font-weight: 600;
+}
+
+.cm-minilang-identifier {
+  color: var(--token-identifier) !important;
+}
+
+.cm-minilang-number {
+  color: var(--token-integer) !important;
+}
+
+.cm-minilang-string {
+  color: var(--token-string) !important;
+}
+
+.cm-minilang-operator {
+  color: var(--token-operator) !important;
+}
+
+.cm-minilang-comment {
+  color: var(--token-comment) !important;
+  font-style: italic;
+}
+
+.cm-minilang-boolean {
+  color: #c084fc !important;
+  font-weight: 600;
+}

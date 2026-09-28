@@ -1,0 +1,29 @@
+# Build artifacts
+interpreter/build/
+
+# Node modules
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Frontend build output
+frontend/dist/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
